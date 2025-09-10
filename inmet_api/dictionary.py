@@ -1,4 +1,4 @@
-# Mapeamento completo dos códigos do CPTEC
+
 mapa_tempo = {
     "ec": "Encoberto c/ Chuvas Isoladas",
     "ci": "Chuvas Isoladas",
@@ -43,4 +43,9 @@ mapa_tempo = {
 }
 
 def translate_codes(dicionary, df):
+    '''
+        Returns the translated values.
+    '''
+
     df["tempo_desc"] = df["tempo"].map(dicionary)
+    return df
