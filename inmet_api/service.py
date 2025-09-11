@@ -2,7 +2,7 @@ import requests
 import xml.etree.ElementTree as ET
 import pandas as pd
 
-from config import URL_LISTA_CIDADES, URL_PREVISAO
+from .config import URL_LISTA_CIDADES, URL_PREVISAO
 
 def get_codigo_cidade(cidade, uf="SP"):
 
