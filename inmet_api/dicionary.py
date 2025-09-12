@@ -1,4 +1,4 @@
-
+# Dicionário para tradução dos códigos meteorológicos
 mapa_tempo = {
     "ec": "Encoberto c/ Chuvas Isoladas",
     "ci": "Chuvas Isoladas",
@@ -43,9 +43,15 @@ mapa_tempo = {
 }
 
 def translate_codes(dicionary, df):
-    '''
-        Returns the translated values.
-    '''
+    """
+    Traduz os códigos meteorológicos do DataFrame para descrições legíveis.
 
+    Args:
+        dicionary (dict): Dicionário de tradução (ex: mapa_tempo).
+        df (pd.DataFrame): DataFrame contendo a coluna 'tempo' com os códigos.
+
+    Returns:
+        pd.DataFrame: DataFrame com nova coluna 'tempo_desc' contendo as descrições.
+    """
     df["tempo_desc"] = df["tempo"].map(dicionary)
     return df

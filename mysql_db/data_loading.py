@@ -1,9 +1,23 @@
 from mysql.connector import Error
 import pandas as pd
-
 from .connect import connect_with_database
 
 def load_data_mysql(df_final):
+    """
+    Carrega os dados processados para a tabela 'clima_mobilidade' no MySQL.
+
+    Args:
+        df_final (str): Caminho do arquivo CSV contendo os dados finais.
+
+    Fluxo:
+        1. Conecta ao banco de dados MySQL.
+        2. Cria a tabela 'clima_mobilidade' caso não exista.
+        3. Insere os dados do DataFrame no banco.
+        4. Fecha a conexão ao final.
+
+    Observação:
+        Pequena correção necessária no SQL: faltou vírgula entre 'distance_text' e 'distance_value'.
+    """
     try:
         conn = connect_with_database()
 
@@ -14,7 +28,7 @@ def load_data_mysql(df_final):
 
             cursor = conn.cursor()
 
-            # Creating table
+            # Criação da tabela (corrigido o erro de sintaxe)
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS clima_mobilidade (
                     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -22,7 +36,7 @@ def load_data_mysql(df_final):
                     end_address VARCHAR(255) NOT NULL,
                     duration_text VARCHAR(50),
                     duration_value INT,
-                    distance_text VARCHAR(50)
+                    distance_text VARCHAR(50),
                     distance_value INT,
                     data DATE,
                     tempo VARCHAR(10),
@@ -32,7 +46,7 @@ def load_data_mysql(df_final):
                 )
             """)
 
-            # Insertind datas of dt_main
+            # Inserção dos dados do DataFrame
             for _, row in df_main.iterrows():
                 cursor.execute("""
                     INSERT INTO clima_mobilidade

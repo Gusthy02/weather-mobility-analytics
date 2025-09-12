@@ -5,11 +5,19 @@ import pandas as pd
 from .config import URL_LISTA_CIDADES, URL_PREVISAO
 
 def get_codigo_cidade(cidade, uf="SP"):
-
     """
-    Returns the city code from the name.
-    """
+    Retorna o código da cidade com base no nome e estado (UF).
 
+    Args:
+        cidade (str): Nome da cidade a ser consultada.
+        uf (str): Unidade federativa da cidade (default "SP").
+
+    Returns:
+        str: Código da cidade utilizado na API de previsão.
+
+    Raises:
+        ValueError: Se a cidade não for encontrada.
+    """
     url = f"{URL_LISTA_CIDADES}?city={cidade}"
     response = requests.get(url)
     tree = ET.fromstring(response.content)
@@ -31,13 +39,16 @@ def get_codigo_cidade(cidade, uf="SP"):
 
     return df_filtrado.iloc[0]["id"]
 
-
 def get_previsao_7dias(codigo_cidade):
-
     """
-    Returns the 7-day forecast in DataFrame format.
-    """
+    Retorna a previsão do tempo para 7 dias de uma cidade específica.
 
+    Args:
+        codigo_cidade (str): Código da cidade obtido por `get_codigo_cidade`.
+
+    Returns:
+        pd.DataFrame: DataFrame com colunas ['dia', 'tempo', 'maxima', 'minima', 'iuv'].
+    """
     url = URL_PREVISAO.format(codigo=codigo_cidade)
     response = requests.get(url)
     tree = ET.fromstring(response.content)
