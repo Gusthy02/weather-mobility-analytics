@@ -1,0 +1,15 @@
+# Variáveis de ambiente
+python-dotenv
+
+# Banco de dados MySQL
+mysql-connector-python
+
+# Manipulação de dados
+pandas
+numpy
+
+# Requisições HTTP
+requests
+
+# Visualização de dados
+matplotlib

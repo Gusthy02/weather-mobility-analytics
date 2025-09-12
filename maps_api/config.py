@@ -1,6 +1,8 @@
+from request_env import api_key
+
 # parameters to consult
 CREDENTIALS_AND_PARAMETERS = {
-    'token': 'AIzaSyAdkan_ejDqlCA-3M_jFwRpVc-qO_nLIFI',
+    'token': api_key,
     'origin': 'Avenida Paulista, São Paulo',
     'destination': 'Pinheiros, São Paulo'
 }
