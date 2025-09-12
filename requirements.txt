@@ -13,3 +13,6 @@ requests
 
 # Visualização de dados
 matplotlib
+
+# .env
+dotenv

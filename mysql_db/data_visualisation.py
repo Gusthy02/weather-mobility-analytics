@@ -5,7 +5,6 @@ from mysql.connector import Error
 from .connect import connect_with_database
 
 def consult_data():
-    print('SUCESSO')
 
     try:
         conn = connect_with_database()

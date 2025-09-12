@@ -1,5 +1,5 @@
 from .config import CIDADE
-from .dictionary import mapa_tempo, translate_codes
+from .dicionary import mapa_tempo, translate_codes
 from .service import get_codigo_cidade, get_previsao_7dias
 
 def calculate_prevision():

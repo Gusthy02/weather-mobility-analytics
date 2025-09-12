@@ -1,5 +1,5 @@
-from process_data.process_api_datas import normalizate_data
-from process_data.process_api_datas import merge_data
+from process_data.main import main_process_data
+from process_data.export_data import export_api_datas
 
 from mysql_db.data_loading import load_data_mysql
 
@@ -7,14 +7,9 @@ from mysql_db.data_visualisation import consult_data
 from mysql_db.data_visualisation import ploting
 
 def main_final():
-    # normalizate data
-    df_previsao, df_rotas = normalizate_data()
-
     # merge data
-    df_final = merge_data(df_previsao, df_rotas)
-
-    # save on csv
-    df_final.to_csv('clima_mobilidade.csv', index=False)
+    df_final = main_process_data()
+    export_api_datas()
 
     # save on mysql
     load_data_mysql(df_final)

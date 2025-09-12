@@ -1,4 +1,4 @@
-from request_env import api_key
+from env.request_env import api_key
 
 # parameters to consult
 CREDENTIALS_AND_PARAMETERS = {

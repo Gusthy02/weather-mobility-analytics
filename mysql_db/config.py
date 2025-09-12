@@ -1,4 +1,4 @@
-from request_env import db, db_password, db_user, db_host
+from env.request_env import db, db_password, db_user, db_host
 
 CREDENTIALS = {
     'host': db_host,

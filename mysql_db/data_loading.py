@@ -10,7 +10,7 @@ def load_data_mysql(df_final):
         if conn.is_connected():
             print("✅ Conectado ao MySQL")
 
-            df_main = pd.read_csv("clima_mobilidade.csv")
+            df_main = pd.read_csv(df_final)
 
             cursor = conn.cursor()
 
