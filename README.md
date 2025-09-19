@@ -2,8 +2,12 @@
 
 # 🌦️ Weather & Mobility Analytics
 
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-Platform-blue?logo=googlecloud)
 ![Python](https://img.shields.io/badge/python-3.10+-blue?logo=python)
 ![MySQL](https://img.shields.io/badge/MySQL-5.7-brightgreen?logo=mysql)
+![Git](https://img.shields.io/badge/Git-Version_Control-lightgrey?logo=git) 
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-yellow?logo=pandas)
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Autor:** Gustavo Thyerris Nascimento Oliveira  
